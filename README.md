@@ -120,4 +120,4 @@ frozen inputs and their SHA-256 hashes are listed in `results/revision_final/fro
 
 ## License
 
-Choose a license before publishing the package.
+GNU 3.0
