@@ -1,0 +1,83 @@
+{
+ "created": "2026-09-14 12:59:59",
+ "Nt": 256,
+ "small": [
+  {
+   "K": 8,
+   "Ns": 3,
+   "snr_db": 0.0,
+   "ratio_mean": 1.0,
+   "frac_optimal": 1.0,
+   "worst_ratio": 1.0
+  },
+  {
+   "K": 8,
+   "Ns": 3,
+   "snr_db": 10.0,
+   "ratio_mean": 1.0,
+   "frac_optimal": 1.0,
+   "worst_ratio": 1.0
+  },
+  {
+   "K": 8,
+   "Ns": 3,
+   "snr_db": 20.0,
+   "ratio_mean": 1.0,
+   "frac_optimal": 1.0,
+   "worst_ratio": 1.0
+  },
+  {
+   "K": 10,
+   "Ns": 4,
+   "snr_db": 0.0,
+   "ratio_mean": 0.9999939005332089,
+   "frac_optimal": 0.9966666666666667,
+   "worst_ratio": 0.9975996599256816
+  },
+  {
+   "K": 10,
+   "Ns": 4,
+   "snr_db": 10.0,
+   "ratio_mean": 1.0,
+   "frac_optimal": 1.0,
+   "worst_ratio": 1.0
+  },
+  {
+   "K": 10,
+   "Ns": 4,
+   "snr_db": 20.0,
+   "ratio_mean": 1.0,
+   "frac_optimal": 1.0,
+   "worst_ratio": 1.0
+  }
+ ],
+ "default": [
+  {
+   "snr_db": 0.0,
+   "teacher": 91.22073884018292,
+   "teacher_equal_power": 90.79744471707251,
+   "strongest_users": 85.95306075866856,
+   "random": 18.496800288201662,
+   "teacher_perfect_csi": 92.90784269831828,
+   "teacher_std": 11.739708362347363
+  },
+  {
+   "snr_db": 10.0,
+   "teacher": 128.46390773226173,
+   "teacher_equal_power": 128.1238196472616,
+   "strongest_users": 118.61842155383081,
+   "random": 30.189248665091686,
+   "teacher_perfect_csi": 141.66877336091193,
+   "teacher_std": 14.18271726524242
+  },
+  {
+   "snr_db": 20.0,
+   "teacher": 143.4258307457693,
+   "teacher_equal_power": 143.08722455841684,
+   "strongest_users": 131.55704923693386,
+   "random": 31.8242548083439,
+   "teacher_perfect_csi": 191.76540312422648,
+   "teacher_std": 15.336405439152454
+  }
+ ]
+}

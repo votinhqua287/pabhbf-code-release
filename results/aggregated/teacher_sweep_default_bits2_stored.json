@@ -1,0 +1,20 @@
+{
+ "prefix": "default",
+ "phase_bits": "2",
+ "stored_snr": true,
+ "n_drops": 4000,
+ "created": "2026-09-14 13:40:58",
+ "snr_db": [
+  "stored"
+ ],
+ "teacher_wsr": [
+  100.31193877646294
+ ],
+ "teacher_sum_rate": [
+  54.702192031633345
+ ],
+ "strongest_wsr": [
+  93.47478363110821
+ ],
+ "teacher_stored_snr_wsr": 104.36743415264128
+}

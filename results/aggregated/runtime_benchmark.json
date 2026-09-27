@@ -1,0 +1,112 @@
+{
+ "n_drops": 1000,
+ "threads": 5,
+ "repeats": 3,
+ "lam_main": 0.03,
+ "seed": 1,
+ "schemes": {
+  "lam0.03": {
+   "checkpoint": "results/checkpoints/pabhbf\\lam0.03_s1_20260914-125259.pt",
+   "encoder_ms_per_user": 0.007097037499988801,
+   "controller_ms_per_drop": 0.043017400001190254,
+   "tools_ms_per_drop": 0.9802768999998079,
+   "latency_ms_per_drop": 1.136846900000819
+  },
+  "lam0": {
+   "checkpoint": "results/checkpoints/pabhbf\\lam0_s1_20260914-112315.pt",
+   "encoder_ms_per_user": 0.0069300625000323635,
+   "controller_ms_per_drop": 0.04069399999934831,
+   "tools_ms_per_drop": 0.9566957000006369,
+   "latency_ms_per_drop": 1.108270700000503
+  },
+  "raw_csi": {
+   "checkpoint": "results/checkpoints/baselines\\raw_csi_s1_20260914-112315.pt",
+   "encoder_ms_per_user": 0.006019768749979448,
+   "controller_ms_per_drop": 0.04908820000127889,
+   "tools_ms_per_drop": 0.977178000001004,
+   "latency_ms_per_drop": 1.122582500001954
+  },
+  "pca": {
+   "checkpoint": "results/checkpoints/baselines\\pca_s1_20260914-132415.pt",
+   "encoder_ms_per_user": 0.0072401937499080304,
+   "controller_ms_per_drop": 0.04014120000101684,
+   "tools_ms_per_drop": 0.9672544999993988,
+   "latency_ms_per_drop": 1.1232387999989442
+  },
+  "random_projection": {
+   "checkpoint": "results/checkpoints/baselines\\random_projection_s1_20260914-132430.pt",
+   "encoder_ms_per_user": 0.007671237500062489,
+   "controller_ms_per_drop": 0.04360670000096434,
+   "tools_ms_per_drop": 0.9665788000002067,
+   "latency_ms_per_drop": 1.1329253000021708
+  },
+  "scalar_quant": {
+   "checkpoint": "results/checkpoints/baselines\\scalar_quant_s1_20260914-132445.pt",
+   "encoder_ms_per_user": 0.007805406249985936,
+   "controller_ms_per_drop": 0.049721899998985464,
+   "tools_ms_per_drop": 0.9826071000006777,
+   "latency_ms_per_drop": 1.1572154999994382
+  },
+  "gaussian_pca_0.2": {
+   "checkpoint": "results/checkpoints/baselines\\gaussian_pca_0.2_s1_20260914-144315.pt",
+   "encoder_ms_per_user": 0.008235950000084813,
+   "controller_ms_per_drop": 0.0441049999990355,
+   "tools_ms_per_drop": 0.991074600000502,
+   "latency_ms_per_drop": 1.1669548000008945
+  },
+  "gaussian_pca_0.8": {
+   "checkpoint": "results/checkpoints/baselines\\gaussian_pca_0.8_s1_20260914-151445.pt",
+   "encoder_ms_per_user": 0.007889524999995956,
+   "controller_ms_per_drop": 0.042456099999981234,
+   "tools_ms_per_drop": 0.9794746000006853,
+   "latency_ms_per_drop": 1.1481631000006018
+  },
+  "top_m_beams": {
+   "checkpoint": "results/checkpoints/baselines\\top_m_beams_s1_20260914-135333.pt",
+   "encoder_ms_per_user": 0.07885740624999471,
+   "controller_ms_per_drop": 0.03900889999931678,
+   "tools_ms_per_drop": 0.9921158999986801,
+   "latency_ms_per_drop": 2.2928432999979123
+  },
+  "autoencoder": {
+   "checkpoint": "results/checkpoints/baselines\\autoencoder_s1_20260914-140218.pt",
+   "encoder_ms_per_user": 0.007526224999992337,
+   "controller_ms_per_drop": 0.04779249999955937,
+   "tools_ms_per_drop": 1.018417599998429,
+   "latency_ms_per_drop": 1.1866296999978658
+  },
+  "angle_domain": {
+   "checkpoint": "results/checkpoints/baselines\\angle_domain_s1_20260914-140518.pt",
+   "encoder_ms_per_user": 0.004589687500015316,
+   "controller_ms_per_drop": 0.04035880000083125,
+   "tools_ms_per_drop": 0.9616040999990219,
+   "latency_ms_per_drop": 1.0753979000000982
+  },
+  "laplace_pca_100": {
+   "checkpoint": "results/checkpoints/baselines\\laplace_pca_100_s1_20260914-153130.pt",
+   "encoder_ms_per_user": 0.007971487500071817,
+   "controller_ms_per_drop": 0.04056209999907878,
+   "tools_ms_per_drop": 0.9728109000006953,
+   "latency_ms_per_drop": 1.140916800000923
+  },
+  "laplace_pca_10": {
+   "checkpoint": "results/checkpoints/baselines\\laplace_pca_10_s1_20260914-151915.pt",
+   "encoder_ms_per_user": 0.008827312499988693,
+   "controller_ms_per_drop": 0.04782160000104341,
+   "tools_ms_per_drop": 0.9725098999988404,
+   "latency_ms_per_drop": 1.161568499999703
+  }
+ },
+ "teacher": {
+  "decision_ms_per_drop": 35.81088849999833,
+  "tools_ms_per_drop": 0.9528365000005579,
+  "teacher_ms_per_drop": 36.75583319999714
+ },
+ "created": "2026-09-14 22:14:13",
+ "meta": {
+  "python": "3.13.15",
+  "numpy": "2.5.2",
+  "torch": "2.13.0+cpu",
+  "git_commit": "no commit"
+ }
+}

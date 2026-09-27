@@ -1,0 +1,18 @@
+{
+ "prefix": "default",
+ "n_drops": 1000,
+ "threads": 5,
+ "decision_ms_per_drop": 85.91512322425842,
+ "tools_ms_per_drop": 2.9961156845092773,
+ "teacher_ms_per_drop": 88.9112389087677,
+ "wsr_mean": 103.00778209835912,
+ "stored_teacher_wsr_mean": 103.00778219223022,
+ "max_rel_dev_from_stored": 5.901591786466457e-08,
+ "created": "2026-09-14 13:00:38",
+ "meta": {
+  "python": "3.13.15",
+  "numpy": "2.5.2",
+  "torch": "2.13.0+cpu",
+  "git_commit": "no commit"
+ }
+}
