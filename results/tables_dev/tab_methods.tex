@@ -1,0 +1,17 @@
+\begin{tabular}{llcll}
+\toprule
+Scheme & Exported per user & $B$ (bits) & Mechanism & Encoder operations\\
+\midrule
+B0 teacher & Estimates $\hh_k$ & 16384 & None & Table~\ref{tab:complexity}\\
+B1 raw CSI & Input $\mathbf{x}_k$ & 16384 & None & --\\
+B2 PCA & 32 principal coefficients, 4 bits each & 128 & Truncation & $\mathcal{O}(\Nt d_z)$\\
+B3 random projection & 32 random coefficients, 4 bits each & 128 & Random basis & $\mathcal{O}(\Nt d_z)$\\
+B4 scalar quantization & 64 entries of $\mathbf{x}_k$, 1 bit per real part & 128 & Quantization & $\mathcal{O}(B)$\\
+B5 Gaussian noise & B2 coefficients plus Gaussian noise & 128 & Gaussian noise & $\mathcal{O}(\Nt d_z)$\\
+B6 strongest codewords & 8 indices of $\mathcal{C}$ and their gains & 128 & Sparse beam report & $\mathcal{O}(M\Nt)$\\
+B7 autoencoder & Encoder trained for reconstruction & 128 & Bottleneck & $\mathcal{O}(\Nt W_{\mathrm{e}}+W_{\mathrm{e}}^2+W_{\mathrm{e}}d_z)$\\
+B8 angle domain & 32 principal coefficients of 222 plane-wave beam gains & 128 & No range sampling & $\mathcal{O}(\Nt^2)$\\
+B9 Laplace noise & Clipped B2 coefficients plus Laplace noise & 128 & Laplace mechanism & $\mathcal{O}(\Nt d_z)$\\
+PAB-HBF & Encoder trained against an adversary & 128 & Adversarial training & $\mathcal{O}(\Nt W_{\mathrm{e}}+W_{\mathrm{e}}^2+W_{\mathrm{e}}d_z)$\\
+\bottomrule
+\end{tabular}
