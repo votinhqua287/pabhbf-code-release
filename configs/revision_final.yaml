@@ -1,0 +1,45 @@
+# Confirmatory revision protocol. Old test results are development evidence.
+policy_train: default_train
+policy_val: default_val
+attack_train:
+  seed: 91526011
+  drops: 20000
+attack_val:
+  seed: 91526012
+  drops: 2000
+final_test:
+  seed: 91526013
+  drops: 2000
+# Post-hoc attack-data scaling on the frozen encoders. Same registry, validation set, preprocessing and
+# early stopping as the confirmatory stage; only the attacker-training size changes. Chunk seeds follow the
+# attack_train formula, so the first 20,000 drops are the confirmatory attacker-training set itself.
+attack_train_80k:
+  seed: 91526011
+  drops: 80000
+scaling:
+  split: attack_train_80k
+  drops: 80000
+  tags: [lam0.01, dz4_lam0, dz4_lam0.03]
+intervals: [1, 4, 8]
+seeds: [1, 2, 3]
+candidates: [lam0, lam0.01, lam0.03, lam0.1, lam0.3, lam1, dz4_lam0, dz4_lam0.03]
+baselines: [raw_csi, pca, random_projection, scalar_quant, autoencoder, angle_domain]
+selection:
+  seed: 1
+  attack_drops: 5000
+  snapshot_budget: 0.20
+  criterion: maximum validation utility with simultaneous Wilson UCB below budget; otherwise minimum violation
+attacks:
+  epochs: 40
+  patience: 6
+  batch: 2048
+  knn_rows: 100000
+  grid_cell_m: 0.5
+  snapshot: [mlp_xy, mlp_rtheta, resmlp_xy, knn, grid]
+  temporal: [mean_mlp, mean_grid, deepsets]
+  threads: 3
+tool_interface:
+  return: fixed_ACK
+  csi_dependent_return_bits: 0
+  latency_penalty: 0.0
+  candidate_budget: 4

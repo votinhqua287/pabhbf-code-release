@@ -1,0 +1,26 @@
+# Smoke configuration: tiny sizes for fast end-to-end checks. Overrides default.yaml.
+Nt: 16
+Nrf: 3
+K: 6
+Ns: 3
+region:
+  r_min_m: 2.0
+  r_max_m: 8.0
+  theta_max_deg: 60.0
+codebook:
+  correlation_level: 0.8
+  groups: 3
+dataset:
+  num_train_drops: 400
+  num_val_drops: 100
+  num_test_drops: 100
+  intervals_per_block: 1
+representation:
+  latent_dim: 8
+  bits_per_entry: 4
+training:
+  batch_size: 64
+  learning_rate: 1.0e-3
+  epochs_pretrain: 1
+  epochs_adversarial: 1
+  seeds: [1]

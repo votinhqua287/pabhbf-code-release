@@ -1,0 +1,4 @@
+# E8 channel mismatch: rich scattering at test time (kappa = 0 dB, 8 scatterers) for models trained with kappa = 10 dB, L = 4.
+channel:
+  rician_k_db: 0.0
+  num_nlos_paths: 8

@@ -1,0 +1,6 @@
+# A4 temporal attacker: 4 intervals per block (same location, scatterers and shadowing; independent fading and noise).
+dataset:
+  num_val_drops: 1000
+  num_test_drops: 1000
+  num_attack_drops: 5000
+  intervals_per_block: 4

@@ -1,0 +1,72 @@
+# Paper A default configuration (privacy-constrained agentic near-field HBF, no eavesdropper).
+# Every simulation parameter used by the code must be read from this file or from an override file.
+seed: 20260912
+
+carrier_frequency_hz: 28.0e9
+bandwidth_hz: 100.0e6
+
+Nt: 256                      # gate G1 (docs/PREMISE_NOTES.md): with Nt = 64, multipath masks most of the range leakage
+Nrf: 8
+K: 16
+Ns: 8
+phase_bits: 4
+
+region:
+  r_min_m: 3.0
+  r_max_m: 20.0
+  theta_max_deg: 60.0
+  distribution: area         # area: uniform in area (default) | range: r uniform on [r_min, r_max] (mismatch tests)
+
+channel:
+  model: near_field          # near_field | far_field (plane-wave responses, same geometry)
+  num_nlos_paths: 4
+  rician_k_db: 10.0
+  pathloss_exponent: 2.0
+  shadowing_std_db: 4.0      # 3GPP TR 38.901 UMi-Street Canyon LoS shadow fading
+  scatterer_radius_m: 2.0
+  reference_distance: r_max  # beta = 1 at the cell edge without shadowing
+
+estimation:
+  pilot_snr_db: 10.0         # per-antenna pilot SNR at the cell edge; sigma_est^2 = 10^(-pilot_snr_db/10)
+
+snr_db_list: [-10, -5, 0, 5, 10, 15, 20]   # reference SNR = Pmax/sigma^2 at the cell edge (per antenna, no BF gain)
+snr_db_default: 10
+
+codebook:
+  correlation_level: 0.8     # Delta for the tau spacing of the polar codebook
+  groups: 8                  # G angular beam groups
+
+weights:
+  classes: [1.0, 2.0]
+  probs: [0.5, 0.5]
+
+dataset:
+  num_train_drops: 20000     # guide default 50000; reduced for CPU-only training (documented in LIMITATIONS.md)
+  num_val_drops: 4000
+  num_test_drops: 4000
+  num_attack_drops: 20000    # evaluation attackers train on this split, which no encoder or controller sees
+  intervals_per_block: 1
+
+representation:
+  latent_dim: 32
+  bits_per_entry: 4          # payload B = 128 bits per user per interval
+  raw_csi_bits_per_entry: 16
+
+latent_dims: [4, 8, 16, 32, 64]
+
+privacy:
+  tolerance_radius_m: 1.0
+  lambda_list: [0.0, 0.01, 0.03, 0.1, 0.3, 1.0]
+  budget_list: [0.05, 0.1, 0.15]
+  attacker_steps_per_update: 2
+  adversary_cell_m: 1.0      # training adversary inside PAB-HBF
+  attack_grid_cell_m: 0.5    # evaluation grid attacker
+
+training:
+  batch_size: 512            # drops per step (profiled on CPU: 2x faster per epoch than 256 at Nt = 256)
+  learning_rate: 1.0e-3
+  epochs_pretrain: 10
+  epochs_adversarial: 20     # every controller trains for 30 epochs in total
+  seeds: [1, 2, 3]
+
+num_mc_eval: 1000

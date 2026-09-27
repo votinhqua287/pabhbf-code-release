@@ -1,0 +1,2 @@
+# Array-size sweep (E5): overrides default.yaml. Datasets use the prefix nt128 and the default split sizes, as for nt64.
+Nt: 128
